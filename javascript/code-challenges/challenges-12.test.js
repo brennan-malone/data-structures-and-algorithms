@@ -65,7 +65,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  let regexPattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{3})+$/;
+  let regexPattern = /^\w+([.-]?\w+)?@\w+([.-]?\w+)*(\.\w{3})+$/;
   return regexPattern.test(email);
 };
 
@@ -91,9 +91,11 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  let regexPattern = /^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+  let regexPattern = /(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/;
   return regexPattern.test(phoneNumber);
 };
+
+//recieved Teacher assistance from Sara!
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
